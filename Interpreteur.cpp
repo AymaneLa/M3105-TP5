@@ -160,17 +160,14 @@ Noeud* Interpreteur::instSiRiche() {
     Noeud* condition1 = expression();
     testerEtAvancer(")");
     Noeud* sequence1 = seqInst();
-    testerEtAvancer("{");
+    instTantQue();
     testerEtAvancer("sinonsi");
     testerEtAvancer("(");
     Noeud* condition2 = expression();
     testerEtAvancer(")");
     Noeud* sequence2 = seqInst();
-    testerEtAvancer("}");
-    testerEtAvancer("{");
     testerEtAvancer("sinon");
     Noeud* sequence3 = seqInst();
-    testerEtAvancer("}");
     testerEtAvancer("finsi");
     return new NoeudInstSiRiche(condition1, sequence1, condition2, sequence2, sequence3);
 }
@@ -184,7 +181,12 @@ Noeud* Interpreteur::instPour() {
     testerEtAvancer(";");
     expression();
     testerEtAvancer(";");
-    else if()
+    if(m_lecteur.getSymbole() == "<VARIABLE>") {
+        affectation();
+    }
+    testerEtAvancer(")");
+    seqInst();
+    testerEtAvancer("finpour");
     
 }
 
