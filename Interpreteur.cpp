@@ -63,14 +63,14 @@ Noeud* Interpreteur::seqInst() {
 }
 
 Noeud* Interpreteur::inst() {
-  // <inst> ::= <affectation>  ; | <instSi> | <instTantQue>
+  // <inst> ::= <affectation>  ; | <instSiRiche> | <instTantQue>
   if (m_lecteur.getSymbole() == "<VARIABLE>") {
     Noeud *affect = affectation();
     testerEtAvancer(";");
     return affect;
   }
   else if (m_lecteur.getSymbole() == "si")
-    return instSi();
+    return instSiRiche();
   // Compléter les alternatives chaque fois qu'on rajoute une nouvelle instruction
   else if (m_lecteur.getSymbole() == "tantque")
       return instTantQue();
@@ -157,21 +157,34 @@ Noeud* Interpreteur::instSiRiche() {
     // <instSiRiche> ::=si(<expression>) <seqInst> {sinonsi(<expression>) <seqInst> }[sinon <seqInst>]finsi
     testerEtAvancer("si");
     testerEtAvancer("(");
-    Noeud* condition = expression();
+    Noeud* condition1 = expression();
     testerEtAvancer(")");
-    Noeud* sequence = seqInst();
+    Noeud* sequence1 = seqInst();
     testerEtAvancer("{");
     testerEtAvancer("sinonsi");
     testerEtAvancer("(");
-    Noeud* condition = expression();
+    Noeud* condition2 = expression();
     testerEtAvancer(")");
-    Noeud* sequence = seqInst();
+    Noeud* sequence2 = seqInst();
     testerEtAvancer("}");
     testerEtAvancer("{");
     testerEtAvancer("sinon");
-    Noeud* sequence = seqInst();
+    Noeud* sequence3 = seqInst();
     testerEtAvancer("}");
     testerEtAvancer("finsi");
-    return new NoeudInstSiRiche(condition, sequence);
+    return new NoeudInstSiRiche(condition1, sequence1, condition2, sequence2, sequence3);
+}
+
+Noeud* Interpreteur::instPour() {   
+    testerEtAvancer("pour");
+    testerEtAvancer("(");
+    if(m_lecteur.getSymbole() == "<VARIABLE>") {
+        affectation();
+    }
+    testerEtAvancer(";");
+    expression();
+    testerEtAvancer(";");
+    else if()
+    
 }
 

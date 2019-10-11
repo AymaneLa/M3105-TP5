@@ -93,10 +93,13 @@ public :
 
 class NoeudInstSiRiche : public Noeud {
 private :
-    Noeud* m_condition;
-    Noeud* m_sequence;
+    Noeud* m_condition1;
+    Noeud* m_condition2;
+    Noeud* m_sequence1;
+    Noeud* m_sequence2;
+    Noeud* m_sequence3;
 public :
-    NoeudInstSiRiche(Noeud* cond, Noeud* seq);
+    NoeudInstSiRiche(Noeud* cond1, Noeud* seq1, Noeud* cond2, Noeud* seq2, Noeud* seq3);
     virtual ~NoeudInstSiRiche() {}
     int executer() override;
 };
