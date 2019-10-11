@@ -91,4 +91,14 @@ public :
     int executer() override;
 };
 
+class NoeudInstSiRiche : public Noeud {
+private :
+    Noeud* m_condition;
+    Noeud* m_sequence;
+public :
+    NoeudInstSiRiche(Noeud* cond, Noeud* seq);
+    virtual ~NoeudInstSiRiche() {}
+    int executer() override;
+};
+
 #endif /* ARBREABSTRAIT_H */

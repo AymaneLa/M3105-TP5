@@ -153,3 +153,25 @@ Noeud* Interpreteur::instTantQue() {
     return new NoeudInstTantQue(condition, sequence);
 }
 
+Noeud* Interpreteur::instSiRiche() {
+    // <instSiRiche> ::=si(<expression>) <seqInst> {sinonsi(<expression>) <seqInst> }[sinon <seqInst>]finsi
+    testerEtAvancer("si");
+    testerEtAvancer("(");
+    Noeud* condition = expression();
+    testerEtAvancer(")");
+    Noeud* sequence = seqInst();
+    testerEtAvancer("{");
+    testerEtAvancer("sinonsi");
+    testerEtAvancer("(");
+    Noeud* condition = expression();
+    testerEtAvancer(")");
+    Noeud* sequence = seqInst();
+    testerEtAvancer("}");
+    testerEtAvancer("{");
+    testerEtAvancer("sinon");
+    Noeud* sequence = seqInst();
+    testerEtAvancer("}");
+    testerEtAvancer("finsi");
+    return new NoeudInstSiRiche(condition, sequence);
+}
+
