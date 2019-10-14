@@ -93,14 +93,21 @@ public :
 
 class NoeudInstSiRiche : public Noeud {
 private :
-    Noeud* m_condition1;
-    Noeud* m_condition2;
-    Noeud* m_sequence1;
-    Noeud* m_sequence2;
-    Noeud* m_sequence3;
+    vector<Noeud*> m_conditions;
+    vector<Noeud*> m_sequences;
 public :
-    NoeudInstSiRiche(Noeud* cond1, Noeud* seq1, Noeud* cond2, Noeud* seq2, Noeud* seq3);
+    NoeudInstSiRiche(vector<Noeud*> cond, vector<Noeud*> seq);
     virtual ~NoeudInstSiRiche() {}
+    int executer() override;
+};
+
+class NoeudInstRepeter : public Noeud {
+private :
+    Noeud* m_condition;
+    Noeud* m_sequence;
+public : 
+    NoeudInstRepeter(Noeud* cond, Noeud* seq);
+    virtual ~NoeudInstRepeter() {}
     int executer() override;
 };
 

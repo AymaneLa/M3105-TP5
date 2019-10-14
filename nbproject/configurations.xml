@@ -15,6 +15,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>instRepeter.txt</itemPath>
       <itemPath>instSi.txt</itemPath>
       <itemPath>instSiRiche.txt</itemPath>
       <itemPath>instTantQue.txt</itemPath>
@@ -83,6 +84,8 @@
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="instRepeter.txt" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="instSi.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instSiRiche.txt" ex="false" tool="3" flavor2="0">
@@ -139,6 +142,8 @@
       <item path="TableSymboles.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instRepeter.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instSi.txt" ex="false" tool="3" flavor2="0">
       </item>

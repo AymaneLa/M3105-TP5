@@ -91,13 +91,27 @@ int NoeudInstTantQue::executer() {
     return 0;
 }
 
-NoeudInstSiRiche::NoeudInstSiRiche(Noeud* condition1, Noeud* sequence1, Noeud* condition2, Noeud* sequence2, Noeud* sequence3)
-: m_condition1(condition1), m_sequence1(sequence1), m_condition2(condition2), m_sequence2(sequence2), m_sequence3(sequence3) {
+NoeudInstSiRiche::NoeudInstSiRiche(vector<Noeud*> conditions, vector<Noeud*> sequences)
+: m_conditions(conditions), m_sequences(sequences) {
 }
 
 int NoeudInstSiRiche::executer() {
-  if (m_condition1->executer()) m_sequence1->executer();
-  else if (m_condition2->executer()) m_sequence2->executer();
-  else m_sequence3->executer();
+    for(int i = 0; i < m_conditions.size(); i++) {
+        if(m_conditions[i] -> executer()) {
+            m_sequences[i] -> executer();
+        }   
+    }
+    return 0; // La valeur renvoyée ne représente rien !
+}
+
+NoeudInstRepeter::NoeudInstRepeter(Noeud* cond, Noeud* seq)
+: m_condition(cond), m_sequence(seq) {
+}
+
+int NoeudInstRepeter::executer() {
+  do {
+    m_sequence -> executer();  
+  }
+  while(m_condition->executer());
   return 0; // La valeur renvoyée ne représente rien !
 }
