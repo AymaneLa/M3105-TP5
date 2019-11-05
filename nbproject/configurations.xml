@@ -15,12 +15,18 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>expAdd.txt</itemPath>
+      <itemPath>expComp.txt</itemPath>
+      <itemPath>expEt.txt</itemPath>
+      <itemPath>expMult.txt</itemPath>
       <itemPath>instEcrire.txt</itemPath>
+      <itemPath>instLire.txt</itemPath>
       <itemPath>instPour.txt</itemPath>
       <itemPath>instRepeter.txt</itemPath>
       <itemPath>instSi.txt</itemPath>
       <itemPath>instSiRiche.txt</itemPath>
       <itemPath>instTantQue.txt</itemPath>
+      <itemPath>instTantQueErreur.txt</itemPath>
       <itemPath>motsCles.txt</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
@@ -38,6 +44,14 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="Test Classe Interpreteur"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>InterpreteurTest.cpp</itemPath>
+        <itemPath>InterpreteurTest.h</itemPath>
+        <itemPath>interpreteurTestRunner.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -70,6 +84,10 @@
       </item>
       <item path="Interpreteur.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="InterpreteurTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InterpreteurTest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Lecteur.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
@@ -86,7 +104,31 @@
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="expAdd.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expComp.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expEt.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expMult.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="instEcrire.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instLire.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instPour.txt" ex="false" tool="3" flavor2="0">
       </item>
@@ -97,6 +139,10 @@
       <item path="instSiRiche.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instTantQue.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instTantQueErreur.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="interpreteurTestRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -133,6 +179,10 @@
       </item>
       <item path="Interpreteur.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="InterpreteurTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="InterpreteurTest.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Lecteur.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Lecteur.h" ex="false" tool="3" flavor2="0">
@@ -149,7 +199,31 @@
       </item>
       <item path="TableSymboles.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="expAdd.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expComp.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expEt.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="expMult.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="instEcrire.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instLire.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instPour.txt" ex="false" tool="3" flavor2="0">
       </item>
@@ -160,6 +234,10 @@
       <item path="instSiRiche.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="instTantQue.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="instTantQueErreur.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="interpreteurTestRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

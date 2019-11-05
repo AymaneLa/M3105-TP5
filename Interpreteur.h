@@ -25,10 +25,17 @@ public:
         return m_arbre;
     } // accesseur
 
+    inline int getNbErreurs() const {
+        return m_nbErreur;
+    } // accesseur
+
+    void traduitEnCPP(ostream & cout, unsigned int indentation) const;
+
 private:
     Lecteur m_lecteur; // Le lecteur de symboles utilisé pour analyser le fichier
     TableSymboles m_table; // La table des symboles valués
     Noeud* m_arbre; // L'arbre abstrait
+    int m_nbErreur;
 
     // Implémentation de la grammaire
     Noeud* programme(); //   <programme> ::= procedure principale() <seqInst> finproc FIN_FICHIER
@@ -36,6 +43,10 @@ private:
     Noeud* inst(); //        <inst> ::= <affectation> ; | <instSi>
     Noeud* affectation(); // <affectation> ::= <variable> = <expression> 
     Noeud* expression(); //  <expression> ::= <facteur> { <opBinaire> <facteur> }
+    Noeud* expMult(); // <expMult>::= <facteur> {*|/<facteur> }
+    Noeud* expAdd(); // <expAdd> ::= <expMult> {+|-<expMult> }
+    Noeud* expComp(); // <expComp> ::= <expAdd> {==|!=|<|<=|>|>= <expAdd> } 
+    Noeud* expEt(); // <expEt> ::= <expComp> {et <expComp> }
     Noeud* facteur(); //     <facteur> ::= <entier>  |  <variable>  |  - <facteur>  | non <facteur> | ( <expression> )
     //   <opBinaire> ::= + | - | *  | / | < | > | <= | >= | == | != | et | ou
     Noeud* instSi(); //      <instSi> ::= si ( <expression> ) <seqInst> finsi
@@ -44,6 +55,7 @@ private:
     Noeud* instRepeter(); // <instRepeter> ::=repeter <seqInst> jusqua( <expression> )
     Noeud* instPour(); // <instPour> ::=pour( [ <affectation> ] ; <expression> ;[ <affectation> ]) <seqInst> finpour
     Noeud* instEcrire(); //<instEcrire>  ::=ecrire( <expression> | <chaine> {, <expression> | <chaine>
+    Noeud * instLire(); // <instLire>    ::=lire( <variable> {, <variable> })
 
     // outils pour simplifier l'analyse syntaxique
     void tester(const string & symboleAttendu) const; // Si symbole courant != symboleAttendu, on lève une exception

@@ -1,13 +1,15 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
 # Résultat attendu : 
-# i = 15
-# j = 1
+# i = 12
+# j = 5
 procedure principale()
-  i = 12+3;
-  j = 8;
-  si (i>14)
-    j=1;
+  i = 12 + 5 -3;
+  j = i - 10 + 1;
+  si (i == 14 et j == 5)
+    i = 12;
+  sinon 
+    j = 3; 
   finsi
 finproc
 # Commentaire Final

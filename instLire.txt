@@ -1,13 +1,9 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
 # Résultat attendu : 
-# i = 15
-# j = 1
+# i = valeur rentrée par l'utilisateur
 procedure principale()
-  i = 12+3;
-  j = 8;
-  si (i>14)
-    j=1;
-  finsi
+ecrire("Saisir un entier : ")
+lire(i)
 finproc
 # Commentaire Final

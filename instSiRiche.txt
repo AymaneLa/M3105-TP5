@@ -1,9 +1,12 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
+# Résultat attendu : 
+# i = 12
+# j = 3
 procedure principale()
   i = 12;
   j = 10;
-  si (i > 14)
+  si (i > 13)
     j = 1;
     i = 12;
   sinonsi (i < 10)

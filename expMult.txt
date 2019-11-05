@@ -1,13 +1,9 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
 # Résultat attendu : 
-# i = 15
-# j = 1
+# i = 5
 procedure principale()
-  i = 12+3;
-  j = 8;
-  si (i>14)
-    j=1;
-  finsi
+    i = 1+2*4/2;
+    ecrire("i = ", i)
 finproc
 # Commentaire Final

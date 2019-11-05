@@ -1,7 +1,9 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
+# Résultat attendu : 
+# i = 2
 procedure principale()
     i = 2;
-    ecrire(i)
+    ecrire("i=",i)
 finproc
 # Commentaire Final

@@ -1,5 +1,8 @@
 # Fichier de test
 # Les lignes de commentaires commencent par #
+# Résultat attendu : 
+# i = 6
+# j = 11
 procedure principale()
     j = 5;
     pour(i = 0; i <= 5; i = i + 1)

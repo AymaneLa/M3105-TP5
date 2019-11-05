@@ -1,0 +1,35 @@
+# Fichier de test expComp
+# Les lignes de commentaires commencent par #
+# Résultat attendu : 
+# i = 12
+# j = 5
+# k = 0
+# l = 0
+# m = 18
+# n = 4
+procedure principale()
+  i = 12;
+  j=0;
+  k=0;
+  l=0;
+  m=0;
+  n=0;
+
+  si (i == 12)
+    j = 5;
+  finsi
+  si (i < 10)
+    k=13; 
+  finsi
+  si(i>12) 
+    l = 15;
+  finsi 
+  si(i>=12)
+    m=18;
+  finsi
+  si(i<=12)
+    n=4;
+  finsi
+
+finproc
+# Commentaire Final
